@@ -31,6 +31,21 @@ h1 {
     transform: scale(1.05);
 }
 
+.history-button {
+    display: inline-block;
+    background: #000200;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.history-button:hover {
+    background: #2c2c2c;
+    transform: scale(1.05);
+}
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -45,10 +60,28 @@ li {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    align-content: center;
+    width: 200px;
+    text-align: center;
+}
+
+li a {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.4;
+    margin: 5px 0;
+    word-wrap: break-word;
+}
+
+li img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
 img {
-    width: 100%;
+    width: 15%;
     height: auto;
     border-radius: 8px;
 }

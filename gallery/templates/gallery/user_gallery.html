@@ -1,0 +1,14 @@
+{% extends 'gallery/base.html' %}
+{% block title %}User Gallery{% endblock %}
+{% block content %}
+<h2>Your Uploaded Images</h2>
+<ul>
+    {% for image in object_list %}
+        <li>
+            <a href="{% url 'image-detail' image.pk %}" class="image-title">{{ image.title }}</a>
+            <img src="{{ image.image.url }}">
+        </li>
+    {% endfor %}
+</ul>
+<a href="/upload/" class="upload-button">Upload a Picture</a>
+{% endblock %}

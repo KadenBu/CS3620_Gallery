@@ -1,0 +1,11 @@
+{% extends 'gallery/base.html' %}
+{% block title %}Viewing History{% endblock %}
+{% block content %}
+<h2>Viewing History</h2>
+<ul>
+    {% for image in images %}
+        <li><a href="{% url 'image-detail' image.pk %}">{{ image.title }}</a></li>
+    {% endfor %}
+</ul>
+<a href="/" class="upload-button">Back to Gallery</a>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'gallery/base.html' %}
+{% block title %}{{ object.title }}{% endblock %}
+{% block content %}
+<h2>{{ object.title }}</h2>
+<img src="{{ object.image.url }}" alt="{{ object.title }}">
+<p>Tags: {{ object.tags }}</p>
+
+<h3>Comments</h3>
+<ul>
+    {% for comment in object.comments.all %}
+        <li>{{ comment.user.username }}: {{ comment.text }}</li>
+    {% endfor %}
+</ul>
+
+{% if user.is_authenticated %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Comment</button>
+    </form>
+{% else %}
+    <p><a href="{% url 'login' %}">Log in</a> to comment.</p>
+{% endif %}
+
+<a href="/" class="upload-button">Back to Gallery</a>
+
+{% endblock %}
